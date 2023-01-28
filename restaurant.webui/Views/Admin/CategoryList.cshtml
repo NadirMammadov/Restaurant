@@ -1,0 +1,44 @@
+@model CategoryListViewModel
+<link rel="stylesheet" href="~/css/admin/foodlist.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="food-list">
+    <table class="food-list-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th><a href="/admin/add/category">Add Category</a> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Categories.Count() > 0)
+            {
+                @foreach (var item in Model.Categories)
+                {
+                    <tr>
+                        <td>@item.CategoryId</td>
+                       
+                        <td>@item.Name</td>
+                        
+                        <td>
+                            <button>
+                                <a href="/admin/categories/@item.CategoryId">Edit</a>
+                            </button>
+                            
+                            <form asp-controller="Admin" asp-action="CategoryDelete" method="POST" style="display: inline;">
+                                <input type="hidden" name="CategoryId" value="@item.CategoryId">
+                                <button type="submit">Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <h3>No Foods</h3>
+            }
+
+        </tbody>
+    </table>
+</div>

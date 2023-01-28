@@ -1,0 +1,72 @@
+#menu{
+    background-image: url(../img/food_background.jpg);
+}
+#menu #site-name{
+    color: white;
+    font-size: 5.5rem;
+    padding: 15px;
+    font-family: 'Macondo', cursive;
+    text-align: center;
+}
+#menu .container{
+    width: 100%;
+    margin: 0 0;
+    padding: 15px;
+}
+
+#menu #site-name span{
+    color: crimson;
+}
+#menu .food-menu{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 8rem;
+    row-gap: 5rem;
+}
+#menu .food-menu .menu-description img{
+    width: 100%;
+    border-radius: 5px;
+    
+}
+#menu .food-menu .menu-description{
+    color: rgb(219, 219, 219);
+    text-align: center;
+    letter-spacing: 1.3px;
+}
+#menu .food-menu .menu-description h2{
+    font-size: 2.5rem;
+}
+#menu .food-menu .menu-description span{
+    font-size: 2rem;
+}
+#menu .food-menu .menu-description p {
+    font-size: 1.8rem;
+}
+#menu .food-menu .cart-footer{
+    margin-top: 10px;
+    color:white;
+    text-align: center;
+    
+}
+#menu .food-menu .cart-footer p{
+    display: inline-block;
+    font-family: 'Macondo', cursive;
+    font-size: 2.2rem;
+    color: rgb(228, 6, 50);
+    margin-right: 20px;
+   
+}
+#menu .food-menu .cart-footer button{
+    background:none;
+    padding: 5px 10px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+#menu .food-menu .cart-footer button:hover{
+    color: rgb(228, 6, 50);
+    background-color: rgb(219, 219, 219);;
+}

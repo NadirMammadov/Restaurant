@@ -1,0 +1,114 @@
+@model CartModel
+<link rel="stylesheet" href="~/css/cart/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<div class="cart">
+    <p class="cart-name">Orders</p>
+    <div class="container">
+        <div class="order-food">
+            @if (Model.CartItems.Count() == 0)
+            {
+                <div class="cart-info">
+                    <h2>
+                        Welcome To<br>
+                        <span>MY</span> RESTAURANT
+                    </h2>
+                    <p class="cart-text">You haven't ordered food yet.
+                        Go to the <a href="/menu"><strong>menu</strong></a> to taste our delicious dishes.
+                    </p>
+                </div>
+            }
+            else
+            {
+                <table>
+                    <tbody>
+                        @foreach (var food in @Model.CartItems)
+                        {
+                            <tr >
+                                <td class="food-name">@food.Name</td>
+                                <td class="food-quantity">@food.Quantity units</td>
+                                <td class="food-price">@(food.Price*food.Quantity)<span>AZN</span></td>
+                                <td>
+                                    <form asp-controller="Cart" asp-action="DeleteFromCart" method="POST">
+                                    <input type="hidden" name="foodId" value="@food.FoodId">
+                                    <button id="delete" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="order-complete">
+                    <button>Complete @Model.TotalPrice()<span> AZN</span></button>
+                </div>
+               
+            }
+        </div>
+
+        @await Html.PartialAsync("_nav")
+    </div>
+
+</div>
+<script>
+    var username = document.getElementById("username").value;
+    var tablenumber = localStorage.getItem("tablenumber");
+    var callwaiter = document.getElementById("callwaiter");
+    if (tablenumber != username) {
+        deletee.remove();
+    }
+</script>
+
+
+@* <div class=col-8>
+    <input id="username" type="hidden" value="@Model.UserName">
+    @if (Model.CartItems.Count() == 0)
+    {
+    <h2>You haven't ordered food yet.
+    Go to the <a href="/menu">menu</a> to taste our delicious dishes.
+    </h2>
+    }else{
+    <table class="shopping-cart-table">
+
+    <thead>
+    <tr>
+    <th></th>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th></th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in @Model.CartItems)
+    {
+    <tr>
+    <td><img src="~/img/@item.ImageUrl" alt="@item.Name"></td>
+    <td>@item.Name</td>
+    <td>@item.Price</td>
+    <td>@item.Quantity</td>
+    <td>@(item.Quantity * item.Price)</td>
+    <td>
+    <form asp-controller="Cart" asp-action="DeleteFromCart" method="POST">
+    <input type="hidden" name="foodId" value="@item.FoodId">
+    <button id="delete" type="submit">Delete</button>
+    </form>
+    </td>
+    </tr>
+    }
+
+    </tbody>
+    </table>
+    }
+    </div>
+    <div id="payment" class="col-4">
+    <h3>Payment</h3>
+    <p>Total: @Model.TotalPrice() azn</p>
+    <div>
+    <button><a href="/checkout">Online payment</a></button>
+
+
+    </div>
+    </div> *@

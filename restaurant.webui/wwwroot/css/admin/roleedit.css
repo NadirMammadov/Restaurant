@@ -1,0 +1,45 @@
+#role_edit{
+    height: 100vh;
+    max-width: 100%;
+    background-image: url(../../img/food_background.jpg);
+    margin: auto;
+    
+    color: #D3D3AE;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+#role_edit h1{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    padding: 20px 0;
+    letter-spacing: 1.2px;
+}
+#role_edit hr{
+    border: none;
+    border-radius: 5px;
+    height: 2px;
+    background-color: #D3D3AE;
+}
+#role_edit h6{
+    font-size: 2rem;
+}
+#role_edit table{
+    width: 100%;
+    border-top: 1px solid #D3D3AE;
+    border-collapse: collapse;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+#role_edit table tr td{
+    padding: 5px;
+    border-bottom: 1px solid #D3D3AE;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+}
+#role_edit button{
+    background-color: inherit;
+    color: #D3D3AE;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}

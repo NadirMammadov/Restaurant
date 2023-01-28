@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="~/css/admin/admin-navbar.css">
+<nav>
+    <div class="container">
+        <h1 id="site-name"><a href="/"><span>My</span> Restaurant</a></h1>
+       
+            <i class="openmenu active fa-solid fa-bars"></i>
+            <i class="closemenu fa-solid fa-xmark"></i>
+      
+        <ul class="navbar-list">
+
+            @if (User.IsInRole("Admin") || User.IsInRole("Waiter"))
+            {
+                <li><a class="nav-link" href="/admin/panel">Admin panel</a></li>
+            }
+            <li><a class="nav-link" href="">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="/menu">Menu</a></li>
+
+            @if (User.IsInRole("Table"))
+            {
+                <li><a class="nav-link cart-icon" href="/cart/item"><i class="fa-solid fa-utensils"></i></a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</nav>
+<script>
+    const openmenuicon = document.querySelector(".openmenu");
+    const closemenuicon = document.querySelector(".closemenu");
+    const navbarlist = document.querySelector(".navbar-list");
+    openmenuicon.addEventListener("click", openmenu)
+    closemenuicon.addEventListener("click",closemenu)
+    function openmenu() {
+        closemenuicon.classList.add("active");
+        navbarlist.classList.add("active");
+        openmenuicon.classList.remove("active");
+    }
+    function closemenu()
+    {
+        openmenuicon.classList.add("active");
+        navbarlist.classList.remove("active");
+        closemenuicon.classList.remove("active");
+    }
+
+</script>

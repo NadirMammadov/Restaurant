@@ -1,0 +1,53 @@
+@model FoodModel
+<link rel="stylesheet" href="~/css/admin/addfood.css">
+@await Html.PartialAsync("_admin-navbar")
+<section id="food_create">
+    <div class="container">
+        <h1>Add Food</h1>
+        <form asp-controller="Admin" asp-action="AddFood" method="POST" enctype="multipart/form-data">
+            <div>
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name">
+                <div class="model-alerts">
+                    <span asp-validation-for="Name" class="model-alert"></span>
+                </div>
+            </div>
+             <div>
+                <label asp-for="Url"></label>
+                <input type="text" class="form-control" asp-for="Url">
+                <div class="model-alerts">
+                    <span asp-validation-for="Url" class="model-alert"></span>
+                </div>
+            </div>
+            <div>
+                <label asp-for="ImageUrl"></label>
+                <input type="hidden"  asp-for="ImageUrl">
+            
+                <input type="file" name="file">
+                
+            </div>
+            <div>
+                <label asp-for="Description"></label>
+                <textarea id="editor" class="form-control" asp-for="Description"></textarea>
+                <div class="model-alerts">
+                    <span asp-validation-for="Description" class="model-alert"></span>
+                </div>
+            </div>
+            <div>
+                <label asp-for="Price"></label>
+                <input type="text" class="form-control" asp-for="Price">
+                <div class="model-alerts">
+                    <span asp-validation-for="Price" class="model-alert"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn">Add Food</button>
+        </form>
+    </div>
+
+</section>
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor');
+    
+</script>

@@ -1,0 +1,35 @@
+@model IEnumerable<User>
+<link rel="stylesheet" href="~/css/admin/qrcode.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="qrcode">
+    <h1>Welcome to <br> <span>My</span> Restaurant</h1>
+   
+    <div class="container">
+        <form asp-controller="Admin" aasp-action="QrCodeCreate" method="POST">
+            <div class="qrcode-select">
+                <select name="QRCodeString" id="QRCodeString">
+                    @foreach (var item in Model)
+                    {
+                        if (item.FirstName != "Admin")
+                        {
+                            <option value="@item.UserName">@item.FirstName</option>
+                        }
+
+                    }
+                </select>
+
+                <input type="submit" value="Genarete">
+        </form>
+
+    </div>
+    <div class="qrcode-img">
+        @if (ViewBag.URL != null)
+        {
+            <img src="@ViewBag.URL" />
+        }
+    </div>
+
+</div>
+
+
+</div>

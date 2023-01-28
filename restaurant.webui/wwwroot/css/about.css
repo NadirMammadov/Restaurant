@@ -1,0 +1,60 @@
+#about .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+}
+#about .about-text p{
+    font-size: 3.8rem;
+}
+#about .about-text h2{
+    font-size: 4.5rem;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Macondo', cursive;
+}
+#about .about-text span{
+    color: crimson;   
+}
+#about .about-info-all{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4rem 0;
+}
+#about .about-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#about .about-info i{
+    font-size: 5rem;
+}
+#about .about-info p{
+    font-size: 2rem;
+}
+#about .about-info .info-title{
+    padding-top: 15px;
+    font-weight: bold;
+}
+#about .about-info .info-text{
+    color: crimson;
+}
+#about .about-images{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+#about .about-images div{
+    overflow: hidden;
+}
+#about .about-images div img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease;
+}
+#about .about-images div img:hover{
+    transform: scale(1.1);
+}

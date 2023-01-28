@@ -1,0 +1,96 @@
+@model OrderModel
+<link rel="stylesheet" href="~/css/cart/checkout.css">
+@await Html.PartialAsync("_admin-navbar")
+
+<div id="checkout">
+    <div class="container">
+        <form asp-controller="Cart" asp-action="Checkout" method="post">
+        <input type="hidden" name="cartId" value="0">
+        <div class="row">
+            <h2>Order detail</h2>
+            <div class="checkout_top">
+                <div>
+                    <label asp-for="@Model.FirstName"></label>
+                    <input type="text" asp-for="@Model.FirstName">
+                </div>
+                <div>
+                    <label asp-for="@Model.LastName"></label>
+                    <input type="text" asp-for="@Model.LastName">
+                </div>
+            </div>
+            <div class="checkout_center">
+                <div>
+                    <label asp-for="@Model.Address"></label>
+                    <input type="text" asp-for="@Model.Address"></textarea>
+                </div>
+                <div>
+                    <label asp-for="@Model.Note"></label>
+                    <input type="text" asp-for="@Model.Note"></textarea>
+                </div>
+            </div>
+            <div class="checkout_bottom">
+                <div>
+                    <label asp-for="@Model.City"></label>
+                    <input type="text" asp-for="@Model.City">
+                </div>
+                <div>
+                    <label asp-for="@Model.Phone"></label>
+                    <input type="text" asp-for="@Model.Phone">
+                </div>
+                <div>
+                    <label asp-for="@Model.Email"></label>
+                    <input type="email" asp-for="@Model.Email">
+                </div>
+            </div>
+            <h2>Card information</h2>
+            <div id="checkout-card">
+                <div class="card-top">
+                    <div>
+                        <label asp-for="@Model.CardName"></label>
+                        <input type="text" asp-for="@Model.CardName">
+                    </div>
+                    <div>
+                        <label asp-for="@Model.CardNumber"></label>
+                        <input type="text" asp-for="@Model.CardNumber">
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div>
+                        <label asp-for="@Model.ExpirationMonth"></label>
+                        <input type="text" asp-for="@Model.ExpirationMonth">
+                    </div>
+                    <div>
+                        <label asp-for="@Model.ExpirationYear"></label>
+                        <input type="text" asp-for="@Model.ExpirationYear">
+                    </div>
+                    <div>
+                        <label asp-for="@Model.Cvc"></label>
+                        <input type="text" asp-for="@Model.Cvc">
+                    </div>
+                </div>
+            </div>
+            <button>Submit</button>
+        </div>
+    </form>
+    <div class="row-1">
+        <h2>Payment information</h2>
+        <div class="item">
+            @foreach (var item in @Model.CartModel.CartItems)
+            {
+                <div class="item-paid">
+                    <a href="/cart"><img src="~/img/@item.ImageUrl" alt="@item.ImageUrl"></a>
+                    <div>
+                        <h4>@item.Name</h4>
+                        Price: <span>@item.Price $</span>
+                        <p>Quantity: <span>@item.Quantity</span></p>
+                        
+                    </div>
+                    
+                </div>
+                
+            }
+        </div>
+    </div>
+    </div>
+    
+</div>

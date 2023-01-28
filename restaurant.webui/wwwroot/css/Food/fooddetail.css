@@ -1,0 +1,79 @@
+#food-detail .menu-link{
+    color: black;
+    font-size:6.5rem;
+    padding: 10px 0;
+    font-family: 'Macondo', cursive;
+    text-align: center;
+    opacity: .9;
+}
+#food-detail .container{
+    margin: 0 8rem;
+}
+#food-detail .food{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+}
+#food-detail .food-img{
+    border: 2px solid rgba(0, 0, 0, 0.39);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#food-detail .food-img img{
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#food-detail .food-about{
+   display: flex;
+   justify-content: center;
+   
+}
+
+#food-detail .food-about div{
+    width: 80%;
+}
+#food-detail .food-about h2{
+    font-size: 3.8rem;
+    letter-spacing: 1.5px;
+    font-family: 'Bad Script', cursive;
+    color: rgba(0, 0, 0, 0.89);
+}
+#food-detail .food-about .description{
+    font-size: 2.8rem;
+    letter-spacing: 1.1px;
+    padding-left: 5px;
+    font-family: 'Alef', sans-serif;
+}
+
+#food-detail .food-about ul{
+    font-size: 2.3rem;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 50px;
+    line-height: 40px;
+    letter-spacing: 1.1px;
+    color: rgba(0, 0, 0, 0.89);
+}
+#food-detail .food-about ul li::before {
+    content: "✓";
+    color: rgba(0, 0, 0, 0.767);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1.1em;
+  }
+#food-detail .food-about .food-price{
+    font-family: 'Alef', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1.1px;
+    padding-left: 5px;
+}
+#food-detail .food-about .food-price span{
+    color: rgb(102, 0, 0);
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

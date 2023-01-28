@@ -1,0 +1,22 @@
+@model RoleModel    
+<link rel="stylesheet" href="~/css/admin/rolecreate.css">
+@await Html.PartialAsync("_admin-navbar")
+<section id="role_create">
+    <div class="container">
+        <h1>Add Role</h1>
+        <form asp-controller="Admin" asp-action="RoleCreate" method="POST" enctype="multipart/form-data">
+            <div>
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name">
+                <div class="model-alerts">
+                    <span asp-validation-for="Name" class="model-alert"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn">Save Role</button>
+
+
+
+        </form>
+    </div>
+
+</section>

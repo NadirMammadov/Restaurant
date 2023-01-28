@@ -1,0 +1,9 @@
+1.Admin panelde masalarin adlari,toplam pulu,odenis ucun buton; butona basildiginda cartdaki yemekler 
+silinmeli userId deyisilmelidir.
+4.entity configurations duzeld
+2.forgot password duzeld
+3.add food sekil elave etmek button duzeld
+
+sifaris verilendeki vaxti duzeld
+sifaris details duzeld
+admin foodlist ekran uzunlugunu duzeld

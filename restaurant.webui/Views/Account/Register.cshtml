@@ -1,0 +1,48 @@
+@model RegisterModel
+<link rel="stylesheet" href="~/css/account/register.css">
+@await Html.PartialAsync("_admin-navbar")
+<section id="register">
+    <div class="container">
+        <h1>Register</h1>
+        <form asp-controller="Account" asp-action="Register" method="POST" >
+            <div>
+                <label asp-for="FirstName"></label>
+                <input type="text" class="form-control" asp-for="FirstName">
+                <div class="model-alerts">
+                    <span asp-validation-for="FirstName" class="model-alert"></span>
+                </div>
+            </div>
+            
+            <div>
+                <label asp-for="UserName"></label>
+                <input type="text" class="form-control" asp-for="UserName">
+                <div class="model-alerts">
+                    <span asp-validation-for="UserName" class="model-alert"></span>
+                </div>
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input type="password" class="form-control" asp-for="Password">
+                <div class="model-alerts">
+                    <span asp-validation-for="Password" class="model-alert"></span>
+                </div>
+            </div>
+            <div>
+                <label asp-for="RePassword"></label>
+                <input type="password" class="form-control" asp-for="RePassword">
+                <div class="model-alerts">
+                    <span asp-validation-for="RePassword" class="model-alert"></span>
+                </div>
+            </div>
+            <div>
+                <label asp-for="Email"></label>
+                <input type="email" class="form-control" asp-for="Email">
+                <div class="model-alerts">
+                    <span asp-validation-for="Email" class="model-alert"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+</section>

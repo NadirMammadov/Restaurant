@@ -1,0 +1,19 @@
+#categories{
+   margin: 30px;
+}
+#categories a{
+    display: inline-block;
+    color: black;
+    padding: 0px 40px;
+    font-size: 1.7rem;
+    border-radius: 25px;
+    transition: all .5s ease;
+}
+#categories a.active{
+    background-color: crimson;
+}
+
+
+.owl-carousel.owl-drag .owl-item{
+    width: auto !important;
+}

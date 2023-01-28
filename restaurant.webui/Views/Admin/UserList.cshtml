@@ -1,0 +1,62 @@
+@model IEnumerable<User>
+<link rel="stylesheet" href="~/css/admin/userlist.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="user-list">
+    <table id="user-list-table" class="user-list-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Confirm order</th>
+                <th>Waiter</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr class="@(item.NewOrder?"bg-warning":"")">
+                        <td>@item.FirstName</td>
+                        
+                        <td>
+                            <button>
+                                <a href="/admin/user/edit/@item.Id">Edit</a>
+                            </button>
+                            <button>
+                                <a href="/admin/user/order/@item.Id">Orders</a>
+                            </button>
+                            <form asp-controller="Admin" asp-action="deleteuser" method="POST" style="display: inline;">
+                                <input type="hidden" name="UserId" value="@item.Id">
+                                <button type="submit">Delete</button>
+                            </form>
+                            <form asp-controller="Admin" asp-action="odemek" method="POST" style="display: inline;">
+                                <input type="hidden" name="UserId" value="@item.Id">
+                                <button type="submit">Payment</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form asp-controller="Admin" asp-action="SeenCart" method="post">
+                                <input type="hidden" name="UserId" value="@item.Id">
+                                <button type="submit">Seen</button>
+                            </form>
+                        </td>
+                        <td class="@(item.Waiter?"bg-success":"")">
+                            <form asp-controller="Admin" asp-action="GoneWaiter" method="post">
+                                <input type="hidden" name="UserId" value="@item.Id">
+                                <button type="submit">Gone</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <h3>No Users</h3>
+            }
+
+        </tbody>
+    </table>
+    
+</div>

@@ -1,0 +1,50 @@
+#role-list{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../img/food_background.jpg);
+}
+.role-list-table{
+    width: 80%;
+    color: #D3D3AE;
+    border-collapse: collapse;
+    border: 1px solid #D3D3AE;
+    margin: auto;
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.role-list-table thead a{
+    color: crimson;
+}
+.role-list-table thead th{
+    border-bottom: 1px solid #D3D3AE;
+    border-left: 2px solid #D3D3AE;
+    padding: 10px 10px;
+    text-align: center;
+}
+.role-list-table thead th:first-child{
+    border-left: none;
+}
+.role-list-table tbody td{
+    border-right: 1px solid #D3D3AE;
+    text-align: center;
+    padding: 15px;
+}
+.role-list-table tbody td a{
+    color: #D3D3AE; 
+} 
+.role-list-table tbody td a:hover{
+    color: crimson;
+}
+.role-list-table tbody td button{
+    border: none;
+    padding: 5px 4px;
+    font-size: 2rem;
+    border-radius: 5px;
+    background-color: inherit;
+    color: #D3D3AE;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+.role-list-table tbody td button:hover{
+    color: crimson;
+}

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="~/css/nav.css">
+<nav class="foot-nav">
+    <a href="/">
+        <i class="fa-solid fa-house"></i>
+        <p>Home</p>
+    </a>
+    <a href="/menu">
+        <i class="fa-solid fa-utensils"></i>
+        <p>Menu</p>
+    </a>
+    <a href="/cart">
+        <i class="fa-solid fa-cart-plus cart-icon"></i>
+        <p>Cart</p>
+    </a>
+    <a href="">
+        <form asp-controller="Admin" asp-action="CallWaiter" method="POST">
+            <i class="fa-solid fa-user"></i>
+            <p>Waiter</p>
+        </form>
+
+    </a>
+    <a href="/other">
+        <i class="fa-solid fa-bars"></i>
+        <p>Other</p>
+    </a>
+</nav>

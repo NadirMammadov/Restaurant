@@ -1,0 +1,55 @@
+@model RoleDetails
+<link rel="stylesheet" href="~/css/admin/roleedit.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="role_edit">
+    <h1>Edit Role</h1>
+    
+    <div class="container">
+        <div asp-validation-summary="All">
+
+        </div>
+        <form asp-controller="Admin" asp-action="RoleEdit">         
+            <input type="hidden" name="RoleId" value="@Model.Role.Id">
+            <input type="hidden" name="RoleName" value="@Model.Role.Name">
+            <h6>Remove from @Model.Role.Name</h6>
+            <table>
+                @if(Model.Members.Count()==0)
+                {
+                    <tr><td>No user for the role</td></tr>
+                }else{
+                    @foreach (var user in Model.Members)
+                    {
+                        <tr>
+                            <td>@user.FirstName</td>
+                            <td>
+                                <input type="checkbox" name="IdsToDelete" value="@user.Id">
+                            </td> 
+                        </tr>
+                        
+                        
+                    }
+                }
+            </table>
+            <h6>Add to  @Model.Role.Name</h6>
+            <table>
+                @if(Model.NoMembers.Count()==0){
+                    <tr>
+                        <td>All users belong to the role</td>
+                    </tr>
+                }else{
+                    @foreach (var user in Model.NoMembers)
+                    {
+                        <tr>
+                            <td>@user.FirstName</td>
+                            <td style="width: 150px;">
+                                <input type="checkbox" name="IdsToAdd" value="@user.Id">
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>

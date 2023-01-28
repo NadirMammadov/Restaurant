@@ -1,0 +1,40 @@
+@model FoodViewModel
+<link rel="stylesheet" href="~/css/food.css">
+<main id="menu">
+    <div class="navbar">
+        <a href="/">
+            <h1 id="site-name"><span>My</span> Restaurant</h1>
+        </a>
+    </div>
+
+    <div class="container">
+        @await Component.InvokeAsync("Categories")
+        <div class="food-menu">
+            @foreach (var food in Model.Foods)
+            {
+                <div class="food-cart ">
+                    <div class="menu-description">
+                        <img src="~/img/@food.ImageUrl" alt="">
+                        <h2>@food.Name</h2>
+                        <span>Description: </span>
+                        <p class="food-description">@food.Description</p>
+                    </div>
+                    <div class="cart-footer">
+                        <p class="price">@food.Price AZN</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display: inline-block;">
+                                <input type="hidden" name="foodId" value="@food.FoodId">
+
+                                <input type="number" name="quantity" value="1" min="1" step="1" style="width: 50px;">
+                                <button type="submit">Order it</button>
+                            </form>
+                        }
+
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</main>

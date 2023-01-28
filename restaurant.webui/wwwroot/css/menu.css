@@ -1,0 +1,66 @@
+#menu .container{
+    display: flex;
+    flex-direction: column;
+}
+#menu .container h4{
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 400;
+    margin: 40px 0;
+}
+#menu .container .menu-images{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    
+}
+#menu .container .menu-images .food{
+    display: flex;
+    flex-direction: column;
+}
+#menu .container .menu-images .food div{
+    height: 250px;
+}
+#menu .container .menu-images div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#menu .container .food strong
+{
+    font-size: 2.2rem;
+    padding: 10px  0;
+} 
+#menu .container .food p
+{
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+    font-weight: 300;
+} 
+#menu .container .menu-link{
+    text-align: center;
+    margin: 20px 0;
+}
+#menu .container a{
+    padding: 10px 22px;
+    background-color: crimson;
+    border-radius: 10px;
+    font-size: 2rem;
+    color: white;
+    transition: all .5s ease;
+}
+#menu .container a:hover{
+    background-color: rgb(194, 15, 51);
+}
+@media screen and (max-width: 800px) {
+    #menu .container .menu-images{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #menu .container .menu-images .food div{
+        height: 300px;
+    }
+
+}

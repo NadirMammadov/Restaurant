@@ -1,0 +1,32 @@
+@model LoginModel
+<link rel="stylesheet" href="~/css/account/login.css">
+@await Html.PartialAsync("_admin-navbar")
+<section id="login">
+    <div class="container">
+        
+        <h1>Login</h1>
+        <div asp-validation-summary="All"></div>
+        <form asp-controller="Account" asp-action="Login" method="POST" >
+            <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl">
+            <div>
+                <label asp-for="UserName"></label>
+                <input type="text" class="form-control" asp-for="UserName">
+                <div class="model-alerts">
+                    <span asp-validation-for="UserName" class="model-alert"></span>
+                </div>
+                
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input type="password" class="form-control" asp-for="Password">
+                <div class="model-alerts"><span asp-validation-for="Password" class="model-alert"></span></div>
+                
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn"><a  href="/account/register">Register</a></button>
+            <button type="submit" class="btn"><a href="/account/forgotpassword">Forgot Password ?</a></button>
+        </form>
+    </div>
+
+</section>

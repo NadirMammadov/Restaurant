@@ -1,0 +1,174 @@
+.cart{
+    margin-bottom: 110px;
+}
+.cart .cart-name {
+    color: #202020;
+    font-size: 3.5rem;
+    padding: 5px 0;
+    font-family: 'Macondo', cursive;
+    text-align: center;
+}
+
+.cart .container {
+    max-width: 480px;
+    margin: 0 auto;
+}
+.cart .container .cart-info{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.cart .container .cart-info h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Macondo', cursive;
+    font-size: 3rem ;
+}
+.cart .container .cart-info h2 span{
+    color: crimson;
+}
+.cart .container .cart-info p{
+    width: 80%;
+    background-color: #eeeeee;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.cart .container .cart-info p a{
+    color: crimson;
+}
+.cart .container table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.cart .container table th{
+    font-weight: 400;
+}
+.cart .container table td{
+    width: 30%;
+    padding: 10px 0;
+    text-align: center;
+}
+.cart .container table  td{
+    border-bottom: 1px solid #b6b6b6;
+}
+.cart .container .food-name {
+    
+}
+.cart .container table span{
+    font-size: 1.2rem;
+}
+.cart .container table button{
+    color: crimson;
+    font-weight: bold;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.cart .container .order-complete{
+   position:fixed;
+   min-width: 50%;
+    bottom: 55px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.cart .container .order-complete button{
+    background-color: rgba(220, 20, 60, 0.89);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+.cart .container .order-complete button span{
+    font-size: .7rem;
+}
+/* .shopping_cart{
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    color: rgb(211, 211, 211);
+}
+.shopping_cart .col-8{
+    width: 70%;
+}
+.shopping_cart .col-8 h2{
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    margin: auto;
+}.shopping-cart-table{
+    width: 100%;
+    color: rgb(211, 211, 211);
+    border-collapse: collapse;
+    font-size: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.shopping-cart-table thead th{
+    padding: 10px 10px;
+    text-align: center;
+}
+.shopping-cart-table thead th:first-child{
+    border-left: none;
+}
+.shopping-cart-table tbody td{
+    
+    text-align: center;
+}
+.shopping-cart-table tbody td:first-child{
+    width: 130px;
+    padding: 0 10px;
+}
+.shopping-cart-table tbody td img{
+    width: 100%;
+    height: auto;
+}
+.shopping-cart-table tbody td a{
+    color: rgb(211, 211, 211); 
+} 
+.shopping-cart-table tbody td button{
+    border: .5px solid rgb(211, 211, 211);
+    padding: 5px 4px;
+    font-size: 2rem;
+    border-radius: 5px;
+    background-color: inherit;
+    color: rgb(211, 211, 211);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.shopping_cart .col-4{
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.shopping_cart #payment h3{
+    font-size: 2.5rem;
+}
+.shopping_cart #payment p {
+    font-size: 1.7rem;
+}
+.shopping_cart #payment button{
+    background-color: inherit;
+    padding: 5px 10px;  
+    border-radius: 5px;
+    border-bottom-left-radius: 9px;
+    border:2px solid rgb(211, 211, 211);
+    margin-right: 5px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.shopping_cart #payment button a{
+    color: rgb(211, 211, 211);
+} */

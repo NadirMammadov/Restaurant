@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="~/css/admin/index.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="admin_panel">
+    <div class="container">
+        <ul>
+            @if (User.IsInRole("Admin") || User.IsInRole("Waiter"))
+            {
+                <li><a class="nav-link" href="/admin/users">Table List</a></li>
+                <li><a class="nav-link" href="/admin/qrcode">Qr Code</a></li>
+            }
+            @if (User.IsInRole("Admin"))
+            {
+                <li><a class="nav-link" href="/admin/orders">Orders</a></li>
+                <li><a class="nav-link" href="/admin/role">Role List</a></li>
+                <li><a class="nav-link" href="/admin/foodlist">Food List</a></li>
+                <li><a class="nav-link" href="/admin/categories">Category List</a></li>
+            }
+        </ul>
+    </div>
+</div>

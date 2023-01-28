@@ -1,0 +1,41 @@
+@model IEnumerable<IdentityRole>
+<link rel="stylesheet" href="~/css/admin/rolelist.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="role-list">
+    
+    <table class="role-list-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th><a href="/admin/role/create">Create Role</a> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>
+                            <button>
+                                <a href="role/@item.Id">Edit</a>
+                            </button>
+                            
+                            <form asp-controller="Admin" asp-action="roledelete" method="POST" style="display: inline;">
+                                <input type="hidden" name="RoleId" value="@item.Id">
+                                <button type="submit">Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <h3>No Role</h3>
+            }
+
+        </tbody>
+    </table>
+</div>

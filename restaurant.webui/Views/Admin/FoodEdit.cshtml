@@ -1,0 +1,80 @@
+@model FoodModel
+<link rel="stylesheet" href="~/css/admin/foodedit.css">
+@await Html.PartialAsync("_admin-navbar")
+<section id="food_edit">
+    <h1>Edit Food</h1>
+    <div class="container">
+        <form asp-controller="Admin" asp-action="FoodEdit" method="POST" enctype="multipart/form-data">
+            <div class="food_edit_form">
+
+                <input type="hidden" value="@Model.FoodId" name="FoodId" >
+                <div>
+
+                    <label asp-for="Name"></label>
+                    <input type="text" class="form-control" asp-for="Name">
+                    <div class="model-alerts">
+                        <span asp-validation-for="Name" class="model-alert"></span>
+                    </div>
+                </div>
+                <div>
+                    <label asp-for="Url">Url</label>
+                    <input type="text" class="form-control" asp-for="Url">
+                    <div class="model-alerts">
+                        <span asp-validation-for="Url" class="model-alert"></span>
+                    </div>
+                </div>
+                <div>
+                    <label asp-for="Description">Description</label>
+                    <textarea id="editor" class="form-control" asp-for="Description"></textarea></textarea>
+                    <div class="model-alerts">
+                        <span asp-validation-for="Description" class="model-alert"></span>
+                    </div>
+                </div>
+                <div>
+                    <label asp-for="ImageUrl"></label>
+                    <input type="hidden" asp-for="ImageUrl">
+                    <img src="~/img/@Model.ImageUrl" width="80" alt="">
+                    <input type="file" name="file">
+
+                </div>
+                <div>
+                    <label asp-for="Price">Price</label>
+                    <input type="text" class="form-control" asp-for="Price">
+                    <div class="model-alerts">
+                        <span asp-validation-for="Price" class="model-alert"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Save Product</button>
+
+            </div>
+            <div class="foodedit_categories">
+                <h4>Categories of food</h4>
+                @for (int i = 0; i < @Model.SelectedCategories.Count; i++)
+                {
+                    <input type="hidden" name="SelectedCategories[@i].CategoryId"
+                    value="@Model.SelectedCategories[@i].CategoryId">
+                    <input type="hidden" name="SelectedCategories[@i].Name" value="@Model.SelectedCategories[@i].Name">
+                }
+                @foreach (var item in @Model.Categories)
+                {
+                    <div class="checkbox_div">
+                        <input name="categoryIds" value="@item.CategoryId" type="checkbox"
+                        @(Model.SelectedCategories.Any(i=>i.CategoryId ==@item.CategoryId)?"checked":" ")>
+                        <label asp-for="category_@item.CategoryId">@item.Name</label>
+                    </div>
+
+                }
+
+            </div>
+
+        </form>
+    </div>
+
+</section>
+<script src="~/js/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor');
+    setInterval(function () {
+        $('iframe').contents().find('body').css('backgroundColor', 'black');
+    }, 1000)
+</script>

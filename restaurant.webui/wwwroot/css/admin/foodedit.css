@@ -1,0 +1,81 @@
+#food_edit{
+    max-width: 100%;
+    color: rgb(189, 189, 189);
+    height: 100%;
+    background-image: url(../../img/food_background.jpg);
+}
+#food_edit .container{
+    margin: 0 80px;
+}
+#food_edit .container form{
+    width: 100%;
+    display: flex;
+}
+#food_edit .container .food_edit_form{
+    width: 100%;
+}
+#food_edit h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#food_edit div{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+#food_edit div label{
+    padding-left: 3px;
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+}
+#food_edit .form-control{
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    background-color: #111111;
+    outline: none;
+    color: rgb(189, 189, 189);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    transition: all .3s ease-in-out;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #111111 inset !important;
+    -webkit-text-fill-color: rgb(189, 189, 189);
+}
+#food_edit .btn{
+    width: 150px;
+    padding: 8px 15px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: rgb(189, 189, 189);
+    background-color: #111111;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#food_edit .foodedit_categories{
+    width: 100%;
+   
+}
+#food_edit .foodedit_categories h4{
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+}
+#food_edit .checkbox_div{
+    position: relative;
+    margin:10px 0;
+}
+#food_edit .checkbox_div label{
+    position: absolute;
+    left:20px;
+    top: -3px;
+}

@@ -1,0 +1,44 @@
+@model FoodViewModel
+<link rel="stylesheet" href="~/css/admin/foodlist.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="food-list">
+    <table class="food-list-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th><a href="/admin/add/food">Add food</a> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Foods.Count() > 0)
+            {
+                @foreach (var item in Model.Foods)
+                {
+                    <tr>
+                        <td><img src="~/img/@item.ImageUrl" width="80" alt="@item.Name"></td>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>
+                            <button>
+                                <a href="/admin/foods/@item.FoodId">Edit</a>
+                            </button>
+                            
+                            <form asp-controller="Admin" asp-action="FoodDelete" method="POST" style="display: inline;">
+                                <input type="hidden" name="FoodId" value="@item.FoodId">
+                                <button type="submit">Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <h3>No Foods</h3>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+.foot-nav {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: .9;
+}
+
+.foot-nav a {
+    display: inline-block;
+    color: black;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+.foot-nav a p{
+    font-size: 12px;
+}
+
+.foot-nav .cart-icon {
+    font-size: 2rem;
+    padding: 5px 10px;
+    color: crimson;
+}

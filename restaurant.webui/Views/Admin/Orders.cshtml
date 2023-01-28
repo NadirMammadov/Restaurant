@@ -1,0 +1,31 @@
+@model List<Order>
+<link rel="stylesheet" href="~/css/admin/orders.css">
+@await Html.PartialAsync("_admin-navbar")
+<div id="orders">
+    <div class="container">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Table</th>
+                    <th>Order Date</th>
+                    <th>Order Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in @Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.OrderDate</td>
+                        <td>@item.OrderNumber</td>
+                        <td><a href="/admin/order/detail/@item.Id">Details</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

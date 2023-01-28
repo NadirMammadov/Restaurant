@@ -1,0 +1,46 @@
+@model FoodModel
+<link rel="stylesheet" href="~/css/Food/fooddetail.css">
+<section id="food-detail">
+    <a href="/menu">
+        <h2 class="menu-link">Menu</h2>
+    </a>
+    <div class="container">
+        <div class="food">
+            <div class="food-img">
+                <img src="~/img/@Model.ImageUrl" alt="@Model.Name">
+            </div>
+            <div class="food-about">
+                <div>
+                    <input id="username" type="hidden" value="@Model.UserName">
+                    <h2>@Model.Name</h2>
+                    <p class="description">Composition of food: </p>
+                    <p class="food-description">@Html.Raw(@Model.Description)</p>
+                    <p class="food-price">Price: <span>@Model.Price azn</span></p>
+                    <p>@Model.Name order now</p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display: inline-block;">
+                            <input type="hidden" name="foodId" value="@Model.FoodId">
+
+                            <input id="number" type="number" name="quantity" value="1" min="1" step="1" style="width: 50px;">
+                            <button id="order" type="submit">Order it</button>
+                        </form>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var username = document.getElementById("username").value;
+    var tablenumber = localStorage.getItem("tablenumber");
+    var order = document.getElementById("order");
+    var number = document.getElementById("number");
+    if(username!=tablenumber)
+    {
+        order.remove();
+        number.remove();
+        localStorage.setItem("username",username);
+    }
+</script>

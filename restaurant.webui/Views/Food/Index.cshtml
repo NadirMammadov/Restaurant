@@ -1,0 +1,74 @@
+@model FoodViewModel
+<link rel="stylesheet" href="~/css/Food/food.css">
+<link rel="stylesheet" href="~/css/nav.css">
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<main id="menu">
+    <div class="menu-navbar">
+        <a href="/menu" class="menu-link">
+            <h1 id="site-name">Menu</h1>
+        </a>
+       
+    </div>
+    <div class="container">
+        @await Component.InvokeAsync("Categories",Model.Category)
+        <div class="food-menu">
+            <input id="tablenumber" type="hidden" value="@Model.TableNumber">
+            @foreach (var food in Model.Foods)
+            {
+                <div class="food-cart ">
+                    <a href="/menu/food/detail/@food.Url">
+                        <div class="food-description">
+                            <div >
+                                <img src="~/img/@food.ImageUrl" alt="">
+                            </div>
+                            <div class="cart-body">
+                                <h2>@food.Name</h2>
+                                <p class="description">@Html.Raw(@food.Description)</p>
+                                <div >
+                                    <p class="price">@food.Price<span> AZN</span></p>
+                                     <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                                        <input type="hidden" name="foodId" value="@food.FoodId">
+                                        <input id="number" type="hidden" name="quantity" value="1" >
+                                        <button id="order" type="submit">Order it</button>
+                                    </form> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            }
+        </div>
+        @await Html.PartialAsync("_nav") 
+        
+    </div>
+</main>
+<script>
+    var tablenumber = document.getElementById("tablenumber").value;
+
+    localStorage.setItem("tablenumber", tablenumber);
+
+    var menu = document.querySelector(".menu-navbar").classList;
+    var cart = document.getElementById("cart-link");
+    var username = localStorage.getItem("username");
+    console.log(username);
+    console.log(tablenumber);
+    if (tablenumber != username) {
+        cart.remove();
+    }
+    window.setInterval(usheight, 300);
+
+    function usheight() {
+        var olcu = window.scrollY;
+
+        if (olcu > 97) {
+
+            menu.add("menu-navbar-scroll");
+        } else {
+            menu.remove("menu-navbar-scroll");
+        }
+    }
+
+
+</script>
